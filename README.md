@@ -1,31 +1,10 @@
-# Windows Network Troubleshooting Toolkit
+# Windows Network Toolkit (Mini)
 
-Practical, real-world **IT Support** toolkit for Windows: step-by-step guides and production-ready **PowerShell** scripts used to diagnose and fix common network issues.
+Tiny toolkit for basic Windows network checks.
 
-## What’s inside
-- **Docs**: clear decision trees + checklists for Tier 1/2 troubleshooting
-- **Scripts**: ping tests, DNS flush, adapter/winsock resets, traceroute, and a one-command **Diagnostics** collector
-- **Case study** + **ticket templates** to show helpdesk professionalism
+## How to use
+1. Go to the **scripts** folder in this repo.
+2. Download `PingTest.ps1` to run a quick connection test.
+3. Download `DNSFix.ps1` to reset DNS and fix common name issues.
 
-## Quick start
-> Run PowerShell as **Administrator** for best results.
-
-```powershell
-# Allow local scripts (CurrentUser scope)
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
-
-# Clone and run
-git clone https://github.com/<YOUR-USERNAME>/windows-network-troubleshooting-toolkit.git
-cd windows-network-troubleshooting-toolkit\scripts
-
-# 1) Collect a full network snapshot (outputs timestamped logs into ../.logs)
-.\Start-NetworkDiagnostics.ps1
-
-# 2) Quick ping test (Google DNS + Gateway + Custom targets)
-.\Invoke-PingTest.ps1 -Targets 1.1.1.1,8.8.8.8 -Count 5
-
-# 3) Fix common name-resolution hiccups
-.\Invoke-DNSFlush.ps1
-
-# 4) Deep reset (winsock/IP). Reboot recommended afterwards.
-.\Invoke-NetworkReset.ps1 -Force
+Run these scripts in **PowerShell (Administrator)**.
